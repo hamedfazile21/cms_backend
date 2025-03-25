@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import dj_database_url
-import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = 'django-insecure-5_yelh44d91w+e4^k^vay+8@cv#w7w^h(bx42ug%ishldc7%wg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG" , 'False').lower() == 'true'
+DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -87,9 +86,7 @@ DATABASES = {
     }
 }
 
-
-database_url = os.environ.get('DATABASE_URL') 
-DATABASES["default"] = dj_database_url.parse(database_url)
+# DATABASES["default"] = dj_database_url.parse('postgresql://communication_django_render_user:DY7zOEhpnrcSvN2K63ivfbupQiXH7OrQ@dpg-cutei9tds78s738v5sv0-a.oregon-postgres.render.com/communication_django_render')
 
 # postgresql://communication_django_render_user:DY7zOEhpnrcSvN2K63ivfbupQiXH7OrQ@dpg-cutei9tds78s738v5sv0-a.oregon-postgres.render.com/communication_django_render
 
